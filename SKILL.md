@@ -1,48 +1,57 @@
 ---
 name: product-showcase
-description: Produce real product demonstration videos from a software, website, open-source project, robotics simulation, or supplied recordings. Plan and capture authentic interactions, then edit, caption, narrate, mix and verify a polished MP4 using the shared scripts.
+description: Produce complete, authentic product showcase videos for software, websites, open-source projects, robotics simulations, or supplied recordings. Coordinate recording, visual editing and sound agents, then integrate and verify the actual MP4 before delivery.
 ---
 
 # Product Showcase
 
-Create a finished product demonstration, with the actual exported video as the deliverable. This repository is the single maintained skill source. Resolve script paths relative to this file; store each new work's inputs, configuration and outputs in its own workspace. Never reuse Nor Cards selectors for another product.
+## 制作目标与边界
 
-## Establish the production
+交付完整展示视频，以及可替换的画面、字幕、配音、BGM、音效和制作配置。主 Agent 持续推进制作、检查与必要修正；录屏生成、脚本成功或静音预览均不代表完整任务完成。
 
-Identify the real product or supplied recordings, key actions, audience, duration and delivery format. Infer routine choices from the request. When unspecified, use a 45–60 second, 1920×1080/60fps landscape demo with restrained English editorial captions. A different work may need different framing, language or pacing; do not force it into the Nor Cards storyboard.
+从用户目标确定关键操作、观众、时长和格式，常规选择自行判断。未指定时默认45–60秒、1920×1080/60fps、简短英文字幕，风格极简、干净、自然、克制。语言、构图和节奏服从作品与用户要求。只讨论时不执行制作。
 
-Check environment with `python scripts/capture.py --check`. Use an isolated demo account/workspace/Vault and nonpersonal content. Do not modify product code to create a nicer-looking demo unless requested. Read [the worked example](examples/nor-cards/README.md) for the concrete production and [its rights record](examples/nor-cards/RIGHTS.md) before reusing assets.
+使用独立测试环境和非个人内容；保留既有工程，不为演示修改产品功能或伪造交互。支持自动录制和用户提供素材，两者共用后期流程。本仓库根目录是唯一 Skill 来源，所有脚本路径相对此文件解析；新作品素材与输出放在独立工作目录。
 
-Write a short storyboard and timed caption cues before recording. Show an intelligible result for each genuine action. Keep short approach pauses, visible drag/drop results and a settled closing hold. Never substitute DOM mutations or recreated UI for failed product interactions.
+## 任务分工
 
-## Acquire real footage
+完整制作且具备子 Agent 工具时，实际启动以下三个子 Agent；局部修改只委派需要的角色。缺少子 Agent 能力时按相同职责顺序执行，并说明实际方式，不虚称已并行协作。
 
-- **AI-assisted capture:** `scripts/capture.py` records an explicit Linux X11 region using FFmpeg. `scripts/xinput.py` provides real eased pointer/keyboard input; `scripts/browser.mjs` provides Chromium CDP input with an explicit target URL. Product-specific selectors and setup/restore logic belong in that work's example, not the shared scripts. Use `try/finally` to restore temporary presentation settings and input state.
-- **Manual footage:** accept the user's recording and authored narration/music. Inspect its dimensions, frame rate, audio, crop and source rights; pass it to the exact same post-production pipeline.
-- **Wayland:** X11 root capture and XTest do not capture/control native Wayland reliably. Use OBS/PipeWire or the desktop portal for capture and import the result. Do not claim Wayland automation is implemented. Windows/macOS capture adapters are not verified; supplied recordings can still enter the FFmpeg pipeline where dependencies are available.
+| 角色 | 职责 | 交接内容 |
+| --- | --- | --- |
+| 主 Agent | 明确目标、分配任务、维护时间线、合成、验收和交付 | 统一的制作参数、完整成片和实际验收结果 |
+| 录制 Agent | 调研真实功能、准备隔离环境、试录、正式录制、检查源画面 | 干净的真实录屏、操作事件时间、环境恢复结果；已有素材时负责检查素材 |
+| 视觉 Agent | 分镜、构图、剪辑方案、字幕排版及画面检查 | 分镜建议、剪辑区间和参数、字幕建议、画面问题的时间点 |
+| 声音 Agent | 配音、音乐与音效制作、授权核查、混音及同步检查 | 独立音轨或逐句音频、音效时间点、素材许可与声音检查结果 |
 
-Prefer app-framebuffer or isolated-display capture when available. X11 root capture can leak other-window surfaces into otherwise clean frames. Keep control terminals/DevTools outside the capture. Scan the entire take before investing in finishing; a few clean screenshots are insufficient.
+每次委派说明目标、输入路径、可写范围、产物位置和完成条件。各 Agent 写各自产物，不并发修改同一文件。主 Agent 是共享 `project.json` 和 `cues.json` 的唯一写入者，负责整合其他角色的建议；不要新增一套重复配置。简短分镜可在任务消息中维护，复杂制作才按需保存一份工作目录内的 `plan.md`。
 
-## Default visual language
+同一录制窗口只能由录制 Agent 控制；其他角色不得同时操作该窗口、鼠标或键盘。时间线调整交由主 Agent 确认并通知受影响角色，未变的部分不重做。代理数量受限时分批安排；已有录屏不重复实拍。
 
-Center the product, hide unrelated chrome in the demo session only, and leave room for genuine popups and drag paths. Preserve product fonts, colors and motion. Use a fixed, proportional composition; no decorative zooming, fake pointers, noisy transitions or invented features.
+## 执行流程
 
-Default 1080p captions are local sans-serif, 40px/regular, bottom centered, fixed 40px lower margin, 100px side margins, short lines. Color and font are configurable. Confirm the longest line and a phone-size preview from the final video. Do not bundle system/Apple fonts. Keep camera, subtitles and audio changes separate from product behavior.
+1. **准备与分镜。** 主 Agent 检查现有素材和交付要求，分配角色。录制 Agent 用 `python scripts/capture.py --check` 检查能力，视觉 Agent 制定分镜，声音 Agent 核查声线与音乐授权并准备短试听；这些准备可以并行。主 Agent 汇总关键操作、字幕/旁白和预计时长，确定共同时间线。需要具体参数时读 [Nor Cards 示例](examples/nor-cards/README.md)及其 [project.json](examples/nor-cards/project.json)，复用素材前读 [RIGHTS.md](examples/nor-cards/RIGHTS.md)。其他作品不得沿用 Nor Cards 专属选择器或录屏坐标。
 
-## Build shared post-production
+2. **试录关键操作。** 录制 Agent 先拍最易出问题的一小段，检查字体可读性、弹窗和拖动路径、鼠标节奏，以及是否录入其他窗口、终端或调试工具。视觉 Agent查看实际试录，主 Agent 确认可用后再正式录制。已有素材则先检查对应关键区间。优先使用应用帧缓冲或隔离显示；X11根窗口区域录屏可能混入其他窗口残片，应先解决采集问题。
 
-Use [project.json](examples/nor-cards/project.json) as a small concrete example, not a new framework. Set clip files and start/end ranges, target duration, crop/composition, captions and audio assets. Caption times are **final edited timeline** seconds. Clip durations must total the declared duration. Default coordinates are not suitable for a new product without inspection.
+3. **正式录制与源画面检查。** Linux X11 使用 `scripts/capture.py`；真实输入可复用 `scripts/xinput.py` 或要求明确目标URL的 `scripts/browser.mjs`。作品专属操作及设置恢复留在该作品目录，通过 `try/finally` 恢复临时状态。Wayland 使用 OBS/PipeWire或桌面门户录制后导入，不宣称已有原生输入自动化；其他系统录制适配未经验证。录制后检查整段素材及关键交互，源画面通过后才进入正式后期。不能用DOM改写或重建UI代替失败的操作。
 
-1. Use `scripts/flash.py scan INPUT REGIONS REPORT` only after choosing genuinely empty regions. Review every candidate and neighboring frames. Legitimate dark themes, native drag previews and popups are not defects. If a few confirmed corrupt samples can be recovered, `repair ... --reviewed` preserves timestamps and fills their slots with adjacent real samples. Long gaps, lost decisive actions or widespread contamination require rerecording, not transition masking. Public source assets must not expose leaked private surfaces.
-2. Create `cues.json` with `index`, `start`, `end`, `text`; add `file` for per-cue audio. Use `scripts/media.py tts` with an explicitly licensed local Piper model, or provide manual audio. The cache fingerprints model, text and rate. For local AI narration, follow the example's pinned model download and record its rights. Do not assume a free online TTS endpoint grants redistribution rights.
-3. `scripts/media.py voice` assembles per-cue audio, trims only edge silence, preserves sentence pauses, verifies caption windows and records sync. It permits at most 1.12× timing correction; widen the scene/caption window rather than rushing speech. Manual continuous narration uses `audio.narration` as a file path instead of `cues`; review its semantic synchronization yourself.
-4. `scripts/showcase.py PROJECT --output BUILD` edits/concatenates real clips, writes ASS captions, exports `video-only.mp4`, prepares independent voice/music/SFX stems, ducks BGM beneath voice and muxes `final.mp4`. Music may be provided or the original synthesized Ambient score reused; SFX times are explicit event data. Keep stems so edits do not require rerecording.
-5. Default mix: voice −18 LUFS, BGM −30 LUFS before voice-driven compression; 20ms attack/500ms release, gentle boundary fades, final two-pass target −16 LUFS/−1.5dBTP. Prepare all stems to the same length. Encode H.264/yuv420p + AAC/48k/stereo, faststart. Do not normalize silent tracks as though they contained narration.
+4. **剪辑与声音制作。** 主 Agent 根据实际录屏锁定剪辑时间线，更新 `project.json` 和 `cues.json`，再让视觉和声音 Agent 分别完成产物。字幕起止时间是最终剪辑时间，所有片段总长须等于声明时长。视觉上保持产品原有字体、配色与动画，固定比例构图，保留真实弹窗和拖动空间；默认1080p字幕为本机无衬线40px/常规字重、底部居中、底边40px、左右100px，按作品调整。避免装饰性运镜和花哨转场，不打包系统或Apple字体。
 
-## Verify and deliver
+   声音 Agent 使用许可明确的本地 Piper 模型，通过 `scripts/media.py tts` 生成逐句配音；首次下载可用示例的固定版本清单和 `scripts/download_voice.py`。也可使用用户提供的授权旁白。`scripts/media.py voice` 只裁两端静音、保留句内停顿并检查字幕时窗；最多1.12倍时间修正，超限应协调延长镜头与字幕，不强行加速。`audio.narration` 可填 `cues` 或连续旁白路径，连续旁白需另查语义同步。音乐可导入或由 `scripts/music.py` 合成，音效依照真实操作时间放置；免费在线服务不等于允许公开再分发。
 
-Run `scripts/verify.py FINAL QA --duration N` with the expected width/height/fps. Supply `--sync` for per-cue narration, `--regions` for the work-specific flash scan, and `--times` for known suspect moments. This checks the actual muxed video, full decoding, missing audio streams, black frames, loudness/peak, narration windows and optional full-take ROI contamination. It extracts contact sheets, phone preview and full-rate neighborhoods.
+5. **整合与内部修正。** 主 Agent 用 `scripts/showcase.py PROJECT --output BUILD` 导出画面、字幕、独立音轨、混音和最终MP4。默认旁白−18 LUFS、BGM−30 LUFS后随旁白压低，最终双遍混音目标−16 LUFS/−1.5dBTP，H.264/yuv420p + AAC/48k/stereo、faststart。参考示例调整参数，保留分轨，避免因替换音轨而重录画面。发现问题交回对应角色修正，再检查受影响的结果；同一方向反复失败时先提出新假设和最小验证，不盲目重试。只有需要用户决定关键取舍或超出授权范围时才中断询问。
 
-Inspect actual encoded frames around every key action and each flagged/suspect moment. ROI detection cannot prove the whole picture is clean; review the subject too. Listen for clipped syllables, mechanical timing, music competition and intrusive SFX. If listening/playback is unavailable, report that limit separately from passed technical checks. A script exiting successfully is not audiovisual acceptance.
+`flash.py scan INPUT REGIONS REPORT` 可辅助检查预留空白区域，区域应按作品实际画面选择。每个候选帧都要结合前后帧复核，深色主题、弹窗和原生拖动影像不能误判。优先修正采集环境并重录；`repair ... --reviewed` 仅作为已确认少量污染样本的备用处理，以相邻真实帧补原时间槽，不能用来掩盖长期污染、丢失关键动作或曝光个人内容，也不能默认作为每次制作必经步骤。
 
-Deliver MP4, separated stems, cues, project config, sources needed to rebuild, a short verification record and rights/provenance. Preserve existing projects. Publishing is separate authorization: when requested, inspect the staged files for credentials/private content, unlicensed assets, models, environments and large generated intermediates. Put oversized deliveries in a Release rather than Git history. Do not publish unresolved third-party assets or silently replace the user's chosen rights-sensitive material.
+## 验收与交付
+
+主 Agent 对实际最终MP4负责，不能仅接受子 Agent 的“完成”回报：
+
+- 运行 `scripts/verify.py FINAL QA --duration N`，按作品指定 `--width`、`--height`、`--fps`；逐句旁白提供 `--sync`，有合适检测区域时提供 `--regions`，疑点时刻提供 `--times`。检查实际封装规格、完整解码、黑帧、音轨、响度、配音时窗，并提取真实导出帧。
+- 查看关键交互、首尾、所有疑点及其连续帧，确认没有异常闪帧、裁切或字幕遮挡；检查最长字幕和手机缩图。空白区域扫描不能证明主体区域无问题。
+- 试听配音是否清晰自然、音节完整，与画面/字幕同步；确认BGM随配音降低、首尾平滑、音效克制。有问题由对应 Agent 修正，主 Agent 复核。环境无法播放或听审时明确列为未验证项，不宣称完整音视频验收通过，也不让用户从头排查已能自行发现的问题。
+
+交付实际MP4、分轨、字幕时间线、配置、必要源素材及简短验收结果和授权来源。验收记录直接附在交付说明或现有案例说明中，不要求额外文档。常规制作问题在内部完成检查修正后再交付；真实阻塞需说明证据及尚未完成内容，不以中间产物冒充成片。
+
+仅按用户授权发布或推送；发布前检查个人内容、凭据、素材许可和文件体积。模型、环境与大体积中间文件不进Git，过大的交付放Release。不得发布授权未确认的素材，也不得把一次案例或格式检查通过表述为任意作品的完整制作已验证。
