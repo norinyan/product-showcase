@@ -1,0 +1,45 @@
+{
+  "duration": 58,
+  "clips": [
+    {
+      "file": "assets/source.mp4",
+      "start": 0,
+      "end": 58
+    }
+  ],
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "crop": [
+      1264,
+      834,
+      8,
+      8
+    ],
+    "content_size": [
+      1536,
+      1014
+    ],
+    "offset": [
+      192,
+      33
+    ],
+    "background": "white",
+    "fade_in": 0.25,
+    "fade_out": 0.4,
+    "crf": 17
+  },
+  "captions": {
+    "file": "cues.json",
+    "size": 40,
+    "font": "DejaVu Sans",
+    "color": "4F4F4F",
+    "brand": "NOR CARDS  /  OBSIDIAN"
+  },
+  "audio": {
+    "narration": "cues",
+    "music": "synthesize",
+    "sfx_events": "sfx-events.json"
+  }
+}

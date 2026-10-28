@@ -1,0 +1,70 @@
+[
+  {
+    "name": "recording",
+    "seconds": 0
+  },
+  {
+    "name": "inserted",
+    "seconds": 2.617
+  },
+  {
+    "name": "editing",
+    "seconds": 4.2
+  },
+  {
+    "name": "typed",
+    "seconds": 11.748
+  },
+  {
+    "name": "completed",
+    "seconds": 17.198
+  },
+  {
+    "name": "task-sorted",
+    "seconds": 22.611
+  },
+  {
+    "name": "card-moved",
+    "seconds": 28.211
+  },
+  {
+    "name": "color-green",
+    "seconds": 31.658
+  },
+  {
+    "name": "color-black",
+    "seconds": 33.114
+  },
+  {
+    "name": "color-white",
+    "seconds": 34.57
+  },
+  {
+    "name": "calendar-open",
+    "seconds": 36.945
+  },
+  {
+    "name": "date-selected",
+    "seconds": 38.091
+  },
+  {
+    "name": "title-renamed",
+    "seconds": 43.685
+  },
+  {
+    "name": "folded",
+    "seconds": 47.198
+  },
+  {
+    "name": "expanded",
+    "seconds": 48.643
+  },
+  {
+    "name": "multi-card",
+    "seconds": 53.305
+  },
+  {
+    "name": "finished",
+    "seconds": 58.003
+  }
+]

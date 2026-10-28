@@ -1,0 +1,98 @@
+[
+  {
+    "index": 1,
+    "start": 0.15,
+    "end": 2.75,
+    "text": "A little space for what matters.",
+    "file": "assets/voice/01.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 2,
+    "start": 2.85,
+    "end": 6.4,
+    "text": "One shortcut. A new card.",
+    "file": "assets/voice/02.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 3,
+    "start": 6.55,
+    "end": 15.3,
+    "text": "Write naturally. Press Enter to keep going.",
+    "file": "assets/voice/03.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 4,
+    "start": 15.6,
+    "end": 19.2,
+    "text": "Finish a task. Make room for the next.",
+    "file": "assets/voice/04.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 5,
+    "start": 19.35,
+    "end": 23.8,
+    "text": "Put the important things first.",
+    "file": "assets/voice/05.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 6,
+    "start": 24.0,
+    "end": 29.6,
+    "text": "Move the card. Keep everything together.",
+    "file": "assets/voice/06.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 7,
+    "start": 30.0,
+    "end": 35.2,
+    "text": "Three quiet finishes.",
+    "file": "assets/voice/07.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 8,
+    "start": 35.4,
+    "end": 40.2,
+    "text": "Choose a date. Keep your context.",
+    "file": "assets/voice/08.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 9,
+    "start": 40.6,
+    "end": 45.3,
+    "text": "Give it a name of your own.",
+    "file": "assets/voice/09.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 10,
+    "start": 45.5,
+    "end": 49.7,
+    "text": "Fold away. Open when you need it.",
+    "file": "assets/voice/10.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 11,
+    "start": 50.0,
+    "end": 54.5,
+    "text": "Different cards. One clear page.",
+    "file": "assets/voice/11.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  },
+  {
+    "index": 12,
+    "start": 54.7,
+    "end": 58.0,
+    "text": "Your notes. Your rhythm.",
+    "file": "assets/voice/12.flac",
+    "voice": "Piper / en_US-ljspeech-high"
+  }
+]

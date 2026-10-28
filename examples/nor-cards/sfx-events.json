@@ -1,0 +1,32 @@
+[
+  {
+    "type": "complete",
+    "time": 16.76,
+    "peak_dbfs": -26
+  },
+  {
+    "type": "drop",
+    "time": 22.1,
+    "peak_dbfs": -26
+  },
+  {
+    "type": "drop",
+    "time": 27.7,
+    "peak_dbfs": -26
+  },
+  {
+    "type": "color",
+    "time": 30.9,
+    "peak_dbfs": -26
+  },
+  {
+    "type": "color",
+    "time": 32.35,
+    "peak_dbfs": -26
+  },
+  {
+    "type": "color",
+    "time": 33.8,
+    "peak_dbfs": -26
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "index": 1,
+    "text": "A little space for what matters.",
+    "caption_start": 0.15,
+    "caption_end": 2.75,
+    "audio_start": 0.15,
+    "audio_end": 2.5068333333333332,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "index": 2,
+    "text": "One shortcut. A new card.",
+    "caption_start": 2.85,
+    "caption_end": 6.4,
+    "audio_start": 2.85,
+    "audio_end": 5.1,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0255625
+    ]
+  },
+  {
+    "index": 3,
+    "text": "Write naturally. Press Enter to keep going.",
+    "caption_start": 6.55,
+    "caption_end": 15.3,
+    "audio_start": 6.55,
+    "audio_end": 9.568604166666667,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "index": 4,
+    "text": "Finish a task. Make room for the next.",
+    "caption_start": 15.6,
+    "caption_end": 19.2,
+    "audio_start": 15.6,
+    "audio_end": 18.44,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.027666666666666666
+    ]
+  },
+  {
+    "index": 5,
+    "text": "Put the important things first.",
+    "caption_start": 19.35,
+    "caption_end": 23.8,
+    "audio_start": 19.35,
+    "audio_end": 21.346916666666665,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "index": 6,
+    "text": "Move the card. Keep everything together.",
+    "caption_start": 24.0,
+    "caption_end": 29.6,
+    "audio_start": 24.0,
+    "audio_end": 26.69,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.02675
+    ]
+  },
+  {
+    "index": 7,
+    "text": "Three quiet finishes.",
+    "caption_start": 30.0,
+    "caption_end": 35.2,
+    "audio_start": 30.0,
+    "audio_end": 31.84,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.017604166666666667
+    ]
+  },
+  {
+    "index": 8,
+    "text": "Choose a date. Keep your context.",
+    "caption_start": 35.4,
+    "caption_end": 40.2,
+    "audio_start": 35.4,
+    "audio_end": 38.09,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0035208333333333333
+    ]
+  },
+  {
+    "index": 9,
+    "text": "Give it a name of your own.",
+    "caption_start": 40.6,
+    "caption_end": 45.3,
+    "audio_start": 40.6,
+    "audio_end": 42.28,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0150625
+    ]
+  },
+  {
+    "index": 10,
+    "text": "Fold away. Open when you need it.",
+    "caption_start": 45.5,
+    "caption_end": 49.7,
+    "audio_start": 45.5,
+    "audio_end": 47.68,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0026875
+    ]
+  },
+  {
+    "index": 11,
+    "text": "Different cards. One clear page.",
+    "caption_start": 50.0,
+    "caption_end": 54.5,
+    "audio_start": 50.0,
+    "audio_end": 52.89,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0125
+    ]
+  },
+  {
+    "index": 12,
+    "text": "Your notes. Your rhythm.",
+    "caption_start": 54.7,
+    "caption_end": 58.0,
+    "audio_start": 54.7,
+    "audio_end": 56.36022916666667,
+    "tempo": 1,
+    "edge_trim_seconds": [
+      0.0,
+      0.0
+    ]
+  }
+]
